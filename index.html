@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vasanthapuram Rahul | Dev Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+    function toggleResumeViewer() {
+      const viewer = document.getElementById('resume-viewer');
+      viewer.style.display = viewer.style.display === 'none' ? 'block' : 'none';
+    }
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(sec => {
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 300;
+        const height = sec.offsetHeight;
+        if (top > offset && top < offset + height) {
+          sec.classList.add('visible');
+        } else {
+          sec.classList.remove('visible');
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <nav>
+    <h1>&lt;/&gt; Rahul.dev</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#gallery">Sketch Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button onclick="toggleTheme()">🌓 Toggle Theme</button>
+  </nav>
+
+  <header class="hero">
+    <img src="photo.jpeg" alt="Rahul" class="profile-pic"/>
+    <h2>Vasanthapuram Rahul</h2>
+    <p>Cybersecurity Enthusiast | Developer | Sketch Artist</p>
+    <a class="resume-btn" href="Rahul_Resume.pdf" download>⬇️ Download Resume</a>
+    <button class="resume-toggle" onclick="toggleResumeViewer()">📄 View Resume</button>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I believe my experience, personality, and ability to work as required makes me a strong candidate. During my career, I’ve managed client communications, dispute resolutions, and reporting across healthcare, aviation, and data services.</p>
+    <p>I take ownership of my tasks and use relationship management to maintain harmony at the workplace. My passion extends to cybersecurity and creativity through sketching, blending analytical skills with an artistic eye.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Technical & Soft Skills</h2>
+    <div class="skills">
+      <a class="skill" href="VAPT.jpeg" target="_blank" title="Certified in VAPT">VAPT</a>
+      <a class="skill" href="python.jpeg" target="_blank" title="Certified in Python">Python</a>
+      <a class="skill" href="javascript.jpeg" target="_blank" title="Certified in JavaScript">JavaScript</a>
+      <a class="skill" href="C++.jpeg" target="_blank" title="Certified in C++">C++</a>
+    </div>
+    <ul class="soft-skills">
+      <li>Team Building</li>
+      <li>Project & Staff Management</li>
+      <li>Data Entry & Analysis</li>
+      <li>MS Excel</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>2024:</strong> M.Sc (Computer Science), A.V. PG College, Hyderabad</li>
+      <li><strong>2021:</strong> B.Sc (Maths, Stats, Comp. Sci), Mahaveer Institute, Hyderabad</li>
+      <li><strong>2016:</strong> Intermediate, Sri Gayatri Junior College, Hyderabad</li>
+      <li><strong>2013:</strong> SSC, Krishnaveni Talent School, Hyderabad</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Work Experience</h2>
+    <ul>
+      <li><strong>Intouch-CX Pvt. Ltd. (Jan 2024 – Present)</strong><br>E-support Officer – Verified and processed utility bills with accuracy and compliance.</li>
+      <li><strong>FSTC Flying School Pvt. Ltd. (Dec 2022 – Jun 2023)</strong><br>Flight Operations Executive – Handled flight documentation, route planning, and compliance under DGCA norms.</li>
+      <li><strong>Hyderabad Nursing Home (Mar 2021 – Sep 2021)</strong><br>Billing Manager – Improved payment processes and managed patient billing systems and reporting.</li>
+    </ul>
+  </section>
+
+  <section id="resume-viewer" style="display: none;">
+    <h2>Resume Viewer</h2>
+    <iframe src="Rahul_Resume.pdf" width="100%" height="600px" style="border:1px solid #38bdf8;"></iframe>
+  </section>
+
+  <section id="project">
+    <h2>Featured Project</h2>
+    <p><strong>SQL Injection Detection using Machine Learning</strong><br>
+    Real-time threat monitoring system using Naïve Bayes and RBAC. Trained with SQL attack data and built in Python using Anaconda and Jupyter Notebook. <a href="SQL-Injection-Prevention.pptx" target="_blank">View Full Project</a></p>
+  </section>
+
+  <section id="gallery">
+    <h2>My Sketch Gallery</h2>
+    <p>I enjoy sketching and creating visual art. My work ranges from spiritual themes to abstract expressions. Explore it here: <a href="sketches/index.html">🎨 View My Artwork</a></p>
+  </section>
+
+  <section id="contact">
+    <h2>Leave a Comment</h2>
+    <form action="https://formspree.io/f/mnqevgeq" method="POST">
+      <input type="text" name="name" placeholder="Name (optional)">
+      <input type="email" name="email" placeholder="Email (optional)">
+      <textarea name="message" required placeholder="Write your comment..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p>Contact: <a href="mailto:vasanthapuramrahul@gmail.com">vasanthapuramrahul@gmail.com</a> | 📞 8019222887</p>
+  </section>
+
+  <footer>
+    <p>© 2024 Vasanthapuram Rahul • <a href="https://github.com/VRahul98">GitHub</a> | <a href="https://linkedin.com/in/rahul-v-5b8908187/">LinkedIn</a></p>
+  </footer>
+  <a href="#contact">
+  <button class="floating-contact">📩 Contact Me</button>
+</a>
+<script>
+  document.querySelectorAll('.skill').forEach(skill => {
+    skill.addEventListener('click', () => {
+      document.querySelectorAll('.skill').forEach(s => s.classList.remove('active'));
+      skill.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

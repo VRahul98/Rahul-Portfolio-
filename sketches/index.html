@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rahul's Sketch Gallery</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <h1>🎨 My Interactive Sketch Gallery</h1>
+  <div class="gallery">
+    <img src="sketch1.jpeg" onclick="openModal(0)" />
+    <img src="sketch2.jpeg" onclick="openModal(1)" />
+    <img src="sketch3.jpeg" onclick="openModal(2)" />
+    <img src="sketch4.jpeg" onclick="openModal(3)" />
+    <img src="sketch5.jpeg" onclick="openModal(4)" />
+    <img src="sketch6.jpeg" onclick="openModal(5)" />
+    <img src="sketch7.jpeg" onclick="openModal(6)" />
+    <img src="sketch8.jpeg" onclick="openModal(7)" />
+    <img src="sketch9.jpeg" onclick="openModal(8)" />
+    <img src="sketch10.jpeg" onclick="openModal(9)" />
+    <img src="sketch11.jpeg" onclick="openModal(10)" />
+    <img src="sketch12.jpeg" onclick="openModal(11)" />
+    <img src="sketch13.jpeg" onclick="openModal(12)" />
+    <img src="sketch14.jpeg" onclick="openModal(13)" />
+    <img src="sketch15.jpeg" onclick="openModal(14)" />
+  </div>
+
+  <!-- Fullscreen Modal -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">×</span>
+    <img class="modal-content" id="modal-img" />
+    <div class="controls">
+      <button onclick="changeImage(-1)">❮</button>
+      <button onclick="changeImage(1)">❯</button>
+    </div>
+  </div>
+
+  <p style="text-align:center"><a href="../index.html">⬅ Back to Portfolio</a></p>
+
+  <script>
+    const images = ["sketch1.jpeg", "sketch2.jpeg", "sketch3.jpeg", "sketch4.jpeg", "sketch5.jpeg","sketch6.jpg","sketch7.jpeg", "sketch8.jpeg", "sketch9.jpeg", "sketch10.jpeg", "sketch11.jpeg","sketch12.jpeg", "sketch13.jpeg", "sketch14.jpeg", "sketch15.jpeg"];
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      document.getElementById('modal').style.display = "block";
+      document.getElementById('modal-img').src = images[currentIndex];
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = "none";
+    }
+
+    function changeImage(step) {
+      currentIndex = (currentIndex + step + images.length) % images.length;
+      document.getElementById('modal-img').src = images[currentIndex];
+    }
+  </script>
+</body>
+</html>
